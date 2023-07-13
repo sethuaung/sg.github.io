@@ -4,11 +4,11 @@ function checkPswd() {
     if (username == "root" && password == "root") {
          window.location="indexM.html";
     }
-    else if( username == "admin" && password == "admin") {
+    else if( username == "admin1" && password == "admin1") {
         window.location="indexC1.html";
       // login Formdata
     }
-    else if( username == "admin1" && password == "admin1") {
+    else if( username == "admin2" && password == "admin2") {
         window.location="indexC2.html";
       // login Meeting
     }
