@@ -10,16 +10,17 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="css/pwd.css"> 
+
 <!-- Favicons -->
-<link href="images/logo/favicon_fe.ico" rel="icon">
-<link href="images/logo/favicon512x512.jpg" rel="felix-logo">
+<link href="images/logo/sg_logo.ico" rel="icon">
+<link href="images/logo/sg_logo_200x200.png" rel="felix-logo">
 </head>
 <body>
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-    <a href="indexM.html#home" class="w3-bar-item w3-button"><b>SM</b> Smilax Global</a>
+    <a href="indexM.html#home" class="w3-bar-item w3-button"><b>SG</b> Smilax Global</a>
     <!-- Float links to the right. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
       <a href="indexM.html#project1" class="w3-bar-item w3-button">Project-1</a>
@@ -28,43 +29,39 @@
     </div>
   </div>
 </div>
-
-<!-- Header -->
-<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-  <img class="w3-image" src="images/similex.jpg" alt="Architecture" width="1500" height="800">
-  <div class="w3-display-middle w3-margin-top w3-center">
-    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>BR</b></span> <span class="w3-hide-small w3-text-light-grey">Architects</span></h1>
-  </div>
-</header>
-
 <!-- Page content -->
 <div class="w3-content w3-padding" style="max-width:1564px">
-  <div class="wrapper">
-    <button id="generate" class="action-btn">
-        Generate Password <i class="fab fa-keycdn"></i>
-    </button>
-    <div class="slider_main">
-        <input type="range" value="8" min="1" max="25" class="slider"
-            oninput="this.nextElementSibling.value = this.value" id="slider">
-        <output>8</output>
+<form id="passwordGeneratorForm">
+    <div class="container">
+        <h2>Password Generator</h2>
+        <div class="result__container">
+            <span id="result"></span>
+            <button id="copy">Copy</button>
+        </div>
+        <div class="options">
+            <div class="option">
+                <label>Length</label>
+                <input type="number" id="length" min="4" max="20" value="10">
+            </div>
+            <div class="option">
+                <label>Include Uppercase</label>
+                <input type="checkbox" id="uppercase" checked>
+            </div>
+            <div class="option">
+                <label>Include Numbers</label>
+                <input type="checkbox" id="numbers" checked>
+            </div>
+            <div class="option">
+                <label>Include Symbols</label>
+                <input type="checkbox" id="symbols" checked>
+            </div>
+        </div>
+        <button class="btn" id="generate" type="submit">Generate Password</button>
     </div>
-    <label class="container" style="font-family: fantasy;color: rgb(3, 3, 3);">Include special characters
-        <input type="checkbox" checked="checked" id="checkbox">
-        <span class="checkmark"></span>
-    </label>
-</div>
-
-<div class="wrapper_main">
-    <h5 id="pwd_txt"></h5>
-    <button id="clipboard" class="clipboard">
-        <i class="fas fa-clipboard"></i>
-    </button>
-</div>
-<script src="js/pwd.js"></script>
+</form>
+<script src="js/pwd.js" defer></script>
 <!-- End page content -->
 </div>
-
-
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-16">
   <p>Themes Designed by <a href="https://sethuaung.guthub.io" title="mosquito" target="_blank" class="w3-hover-text-green">mosquito</a></p>

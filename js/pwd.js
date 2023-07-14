@@ -1,29 +1,80 @@
-const password_ele = document.getElementById("pwd_txt");
-var string = "ABCDEFGHIJKLMNOPQRSTUVWXYZacdefghijklnopqrstuvwxyz0123456789";
-const special_chars = "@#$%^&*";
-const generate = document.getElementById("generate");
-const clipboard = document.getElementById("clipboard");
-var pwd_length = document.getElementById("slider");
+// Getting the DOM Eleements
+const resultDOM = document.getElementById('result');
+const copybtnDOM = document.getElementById('copy');
+const lengthDOM = document.getElementById('length');
+const uppercaseDOM = document.getElementById('uppercase');
+const numbersDOM = document.getElementById('numbers');
+const symbolsDOM = document.getElementById('symbols');
+const generatebtn = document.getElementById('generate');
+const form = document.getElementById('passwordGeneratorForm');
 
+// Generating Character Codes For The Application 
+const UPPERCASE_CODES = arrayFromLowToHigh(65, 90);
+const LOWERCASE_CODES = arrayFromLowToHigh(97, 122);
+const NUMBER_CODES = arrayFromLowToHigh(48, 57);
+const SYMBOL_CODES = arrayFromLowToHigh(33, 47)
+  .concat(arrayFromLowToHigh(58, 64))
+  .concat(arrayFromLowToHigh(91, 96))
+  .concat(arrayFromLowToHigh(123, 126));
 
-generate.addEventListener('click', () => {
-    let password = "";
-    var checked = document.getElementById("checkbox").checked;
-    var final_string = string;
-    console.log(checked);
-    if (checked) {
-        final_string += "@#$%^&*";
-    }
-    for (var i = 0; i < pwd_length.value; i++) {
-        let pwd = final_string[Math.floor(Math.random() * final_string.length)];
-        password += pwd;
-    }
-    password_ele.innerText = password;
-    final_string = string;
+// Copy Password
+copybtnDOM.addEventListener('click', () => {
+  const textarea = document.createElement('textarea');
+  const passwordToCopy = resultDOM.innerText;
+
+  // Edge Case when Password is Empty
+  if (!passwordToCopy) return;
+
+  // Copy Functionality
+  textarea.value = passwordToCopy;
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand('copy');
+  textarea.remove();
+  alert('Password Copied to Clipboard');
 });
 
-
-clipboard.addEventListener('click', () => {
-    navigator.clipboard.writeText(password_ele.innerText);
-    alert("Password copied to clipboard");
+// Checking the options that are selected and setting the password
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const characterAmount = lengthDOM.value;
+  const includeUppercase = uppercaseDOM.checked;
+  const includeNumbers = numbersDOM.checked;
+  const includeSymbols = symbolsDOM.checked;
+  const password = generatePassword(
+    characterAmount,
+    includeUppercase,
+    includeNumbers,
+    includeSymbols
+  );
+  resultDOM.innerText = password;
 });
+
+// The Password Generating Function
+let generatePassword = (
+  characterAmount,
+  includeUppercase,
+  includeNumbers,
+  includeSymbols
+) => {
+  let charCodes = LOWERCASE_CODES;
+  if (includeUppercase) charCodes = charCodes.concat(UPPERCASE_CODES);
+  if (includeSymbols) charCodes = charCodes.concat(SYMBOL_CODES);
+  if (includeNumbers) charCodes = charCodes.concat(NUMBER_CODES);
+  const passwordCharacters = [];
+  for (let i = 0; i < characterAmount; i++) {
+    const characterCode =
+      charCodes[Math.floor(Math.random() * charCodes.length)];
+    passwordCharacters.push(String.fromCharCode(characterCode));
+  }
+  return passwordCharacters.join('');
+};
+
+// The Character Code Generating Function
+function arrayFromLowToHigh(low, high) {
+  const array = [];
+  for (let i = low; i <= high; i++) {
+    array.push(i);
+  }
+  return array;
+}
