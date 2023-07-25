@@ -12,6 +12,10 @@ function checkPswd() {
         window.location="indexC2.html";
       // login Meeting
     }
+    else if( username == "sshrm@smilax.com" && password == "sshrm") {
+      window.location="http://sky.smilaxhr.com/Secure/Login";
+    // login SSHRM
+    }
     else{
         alert("Passwords do not match.");
     }
