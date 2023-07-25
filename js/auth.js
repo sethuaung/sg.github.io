@@ -16,10 +16,23 @@ function checkPswd() {
       window.location="https://sites.google.com/view/smilaxglobal/";
     // login SG-GoogleSite
     }
-    else if( username == "sshrm@smilax.com" && password == "sshrm") {
+    else if( username == "ms" && password == "sshrm") {
       window.location="http://sky.smilaxhr.com/Secure/Login";
-    // login SSHRM
+    // Mingalar Sky login SSHRM
     }
+    else if( username == "acn" && password == "sshrm") {
+      window.location="https://acn.smilaxhr.com/Secure/LogIn";
+    // ACN login SSHRM
+    }
+    else if( username == "app" && password == "sshrm") {
+      window.location="http://app.smilaxhr.com/Secure/LogIn";
+    // APP login SSHRM
+    }
+    else if( username == "ocn" && password == "sshrm") {
+      window.location="http://ocn.smilaxhr.com/Secure/LogIn";
+    // OCN login SSHRM
+    }
+
     else{
         alert("Passwords do not match.");
     }
