@@ -4,6 +4,10 @@ function checkPswd() {
     if (username == "root" && password == "root") {
          window.location="indexM.html";
     }
+    else if( username == "admin" && password == "admin") {
+      window.location="indexM.html";
+    // login Main
+    }
     else if( username == "admin1" && password == "admin1") {
         window.location="indexC1.html";
       // login Formdata
