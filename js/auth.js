@@ -12,6 +12,10 @@ function checkPswd() {
         window.location="indexC2.html";
       // login Meeting
     }
+    else if( username == "sgadmin@smilax.com" && password == "sgadmin") {
+      window.location="https://sites.google.com/view/smilaxglobal/";
+    // login SG-GoogleSite
+    }
     else if( username == "sshrm@smilax.com" && password == "sshrm") {
       window.location="http://sky.smilaxhr.com/Secure/Login";
     // login SSHRM
