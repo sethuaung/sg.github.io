@@ -21,7 +21,7 @@ function checkPswd() {
     // login SG-GoogleSite
     }
     else if( username == "ms" && password == "sshrm") {
-      window.location="http://sky.smilaxhr.com/Secure/Login";
+      window.location="https://sky.smilaxhr.com/Secure/Login";
     // Mingalar Sky login SSHRM
     }
     else if( username == "acn" && password == "sshrm") {
@@ -29,11 +29,11 @@ function checkPswd() {
     // ACN login SSHRM
     }
     else if( username == "app" && password == "sshrm") {
-      window.location="http://app.smilaxhr.com/Secure/LogIn";
+      window.location="https://app.smilaxhr.com/Secure/LogIn";
     // APP login SSHRM
     }
     else if( username == "ocn" && password == "sshrm") {
-      window.location="http://ocn.smilaxhr.com/Secure/LogIn";
+      window.location="https://ocn.smilaxhr.com/Secure/LogIn";
     // OCN login SSHRM
     }
 
