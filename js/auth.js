@@ -29,11 +29,11 @@ function checkPswd() {
     // ACN login SSHRM
     }
     else if( username == "app" && password == "sshrm") {
-      window.location="https://app.smilaxhr.com/Secure/LogIn";
+      window.location.href="http://app.smilaxhr.com/Secure/LogIn";
     // APP login SSHRM
     }
     else if( username == "ocn" && password == "sshrm") {
-      window.location="https://ocn.smilaxhr.com/Secure/LogIn";
+      window.location.replace("http://ocn.smilaxhr.com/Secure/LogIn");
     // OCN login SSHRM
     }
 
