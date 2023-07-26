@@ -17,23 +17,23 @@ function checkPswd() {
       // login Meeting
     }
     else if( username == "sgadmin@smilax.com" && password == "sgadmin") {
-      window.location="https://sites.google.com/view/smilaxglobal/";
+      window.location.href="https://sites.google.com/view/smilaxglobal/";
     // login SG-GoogleSite
     }
     else if( username == "ms" && password == "sshrm") {
-      window.location="https://sky.smilaxhr.com/Secure/Login";
+      window.location.href="https://sky.smilaxhr.com/Secure/Login";
     // Mingalar Sky login SSHRM
     }
     else if( username == "acn" && password == "sshrm") {
-      window.location="https://acn.smilaxhr.com/Secure/LogIn";
+      window.location.href="https://acn.smilaxhr.com/Secure/LogIn";
     // ACN login SSHRM
     }
     else if( username == "app" && password == "sshrm") {
-      window.location.href="http://app.smilaxhr.com/Secure/LogIn";
+      window.location.href="https://app.smilaxhr.com/Secure/LogIn";
     // APP login SSHRM
     }
     else if( username == "ocn" && password == "sshrm") {
-      window.location.replace("http://ocn.smilaxhr.com/Secure/LogIn");
+      window.location.href="http://ocn.smilaxhr.com/Secure/LogIn";
     // OCN login SSHRM
     }
 
