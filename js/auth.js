@@ -33,7 +33,7 @@ function checkPswd() {
     // APP login SSHRM
     }
     else if( username == "ocn" && password == "sshrm") {
-      window.location.href="http://ocn.smilaxhr.com/Secure/LogIn";
+      window.location.href="https://109.169.45.52:8081/Secure/LogIn";
     // OCN login SSHRM
     }
     else if( username == "sg" && password == "sshrm") {
