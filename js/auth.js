@@ -36,6 +36,10 @@ function checkPswd() {
       window.location.href="http://ocn.smilaxhr.com/Secure/LogIn";
     // OCN login SSHRM
     }
+    else if( username == "sg" && password == "sshrm") {
+      window.location.href="https://sshr.smilaxglobal.com/Secure/LogIn";
+    // smilax login SSHRM
+    }
 
     else{
         alert("Passwords do not match.");
